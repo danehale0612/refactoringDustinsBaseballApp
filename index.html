@@ -186,12 +186,13 @@
 				schedule = sched[0].length - 1;
 			}
 
-			console.log(league_array);
+			// for (var k = 5; k<9; k++) {
+			// 	if (($('#team_'+k).val()) === undefined) {
+			// 		($('#team_'+k).val()) = k;
+			// 		console.log($('#team_'+k).val());
+			// 	} 
+			// };
 
-			// for (var z = 1; z < league_array.length; z++) {
-			// 	if (($('#team_'+z).val()) === ($('#team_'+[z+1]).val()) {
-			// 		alert("There are NO TIES, bub!");
-			// } else {
 				
 			if (($('#team_1').val()) === ($('#team_2').val()) || ($('#team_3').val()) === ($('#team_4').val()) || ($('#team_5').val()) === ($('#team_6').val()) || ($('#team_7').val()) === ($('#team_8').val())) {
 
@@ -199,7 +200,7 @@
 
 				} else {
 			
-
+			
 
 
 			$('.game_wraps').each(function(index){ 
@@ -233,6 +234,8 @@
 								dataType: "json",
 								success: function (data, game) {
 									pageRefresh();
+									//Add Zach's function
+									scoreAdd();
 								} 
 							});
 						}		
@@ -251,13 +254,19 @@
 				}
 			};	
 			}//End of if Statement
+
 		}); // End of click function
 		
 
+		//Zach's funciton:
 		
-		$('.score_inputs').each(function(){
-			$(this).val('');
-		});
+		function scoreAdd() {
+			$('.runs').each(function() {
+			$('.runs').html('<p>' + $('.score_inputs').val() + '</p>');
+			console.log($('.score_inputs').val());
+			});
+		};
+
 
 		
 
@@ -834,7 +843,7 @@
 								refresh_count++;
 								if (refresh_count >= league_array[0].length) {
 									$('#standings').html('');
-									$('#table_schedule').html('');
+									$('#schedule_table').html('');
 									pageLoad();
 								};
 							}
