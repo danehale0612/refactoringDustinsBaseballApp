@@ -35,5 +35,9 @@
 Dane:
 
 -added NO Ties for 8 teams (working still on getting something in place for less than 8 teams)
+
 -fixed validation for entering a new team
+
 -worked with Zach on trying to have the scores refresh automatically with out doing a page refresh
+
+-Added Zach's code (It is commented on what his code is).  He worked on getting the scores to add to the scores table.
